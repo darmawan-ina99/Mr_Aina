@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>4D Key Generator PRO</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#080c11;
+  color:#edf2f7;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+  max-width:760px;
+  margin:auto;
+  padding:15px;
+}
+
+h1{
+  margin:3px 0;
+  font-size:25px;
+}
+
+.subtitle{
+  color:#8996a5;
+  font-size:12px;
+  margin-bottom:15px;
+}
+
+.card{
+  background:#131922;
+  border:1px solid #27313d;
+  border-radius:14px;
+  padding:15px;
+  margin-bottom:13px;
+}
+
+h2{
+  font-size:17px;
+  margin:0 0 12px;
+}
+
+h3{
+  font-size:14px;
+  margin:10px 0;
+}
+
+.card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.card-head h2,
+.card-head h3{
+  margin:0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+label{
+  display:block;
+  color:#8996a5;
+  font-size:11px;
+  margin-bottom:5px;
+}
+
+input,
+select,
+button{
+  width:100%;
+  border-radius:9px;
+  padding:11px;
+  font-size:14px;
+}
+
+input,
+select{
+  background:#0a0f15;
+  color:white;
+  border:1px solid #303b49;
+}
+
+button{
+  margin-top:10px;
+  border:0;
+  background:#20a96b;
+  color:white;
+  font-weight:bold;
+}
+
+button.secondary{
+  background:#293441;
+}
+
+button.copy{
+  background:#2269c9;
+}
+
+button.pdf{
+  background:#7d4fc9;
+}
+
+button.mini{
+  width:auto;
+  margin:0;
+  padding:6px 12px;
+  font-size:11px;
+  font-weight:normal;
+  background:#2269c9;
+}
+
+.number{
+  font-family:monospace;
+  font-size:25px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+.small{
+  color:#8591a0;
+  font-size:11px;
+  line-height:1.5;
+}
+
+.result{
+  display:grid;
+  grid-template-columns:45px 1fr 70px;
+  gap:8px;
+  align-items:center;
+  padding:11px 0;
+  border-bottom:1px solid #242d37;
+}
+
+.rank{
+  color:#687585;
+  font-weight:bold;
+}
+
+.score{
+  text-align:right;
+  color:#55d99a;
+  font-size:12px;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:4px;
+  padding:3px 6px;
+  background:#243443;
+  border-radius:5px;
+  color:#9bc9ff;
+  font-size:9px;
+}
+
+.bar{
+  height:4px;
+  background:#252e38;
+  margin-top:6px;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  background:#20a96b;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.chip{
+  background:#202a35;
+  border:1px solid #303b47;
+  border-radius:8px;
+  padding:8px 10px;
+  font-family:monospace;
+  font-weight:bold;
+}
+
+.chip .pct{
+  font-size:9px;
+  opacity:.5;
+  margin-left:4px;
+  font-weight:normal;
+}
+
+.chip.hot{
+  border-color:#b77b24;
+  color:#ffc76a;
+}
+
+.chip.cold{
+  color:#8cbcff;
+}
+
+.section{
+  margin-top:15px;
+}
+
+.position{
+  padding:11px 0;
+  border-bottom:1px solid #252e38;
+}
+
+.position:last-child{
+  border-bottom:0;
+}
+
+.pos-title{
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.notice{
+  background:#111a24;
+  border-left:3px solid #d89b37;
+  padding:10px;
+  color:#aab5c2;
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* ====== PRINT (fallback PDF) ====== */
+
+@media print{
+  body{
+    background:white;
+    color:#111;
+  }
+  button{
+    display:none !important;
+  }
+  .card{
+    background:white;
+    border-color:#bbb;
+    break-inside:avoid;
+  }
+  input,
+  select{
+    background:white;
+    color:#111;
+  }
+  .chip{
+    background:white;
+    border-color:#999;
+    color:#111;
+  }
+  .chip.hot{
+    color:#8a5a00;
+    border-color:#8a5a00;
+  }
+  .chip.cold{
+    color:#1a4f8a;
+  }
+  .subtitle,
+  .small,
+  label,
+  .rank{
+    color:#444;
+  }
+  .bar{
+    background:#ddd;
+  }
+  .notice{
+    background:white;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎯 4D KEY GENERATOR PRO</h1>
+
+<div class="subtitle">
+Transition • 4D • 3D • 2D • Angka Ikut
+</div>
+
+
+<!-- INPUT -->
+
+<div class="card">
+
+<h2>⚙️ Parameter</h2>
+
+<div class="grid">
+
+<div>
+<label>HASIL TERAKHIR</label>
+<input
+  id="last"
+  value="1756"
+  maxlength="4"
+  inputmode="numeric">
+</div>
+
+<div>
+<label>JUMLAH KEY</label>
+<select id="amount">
+  <option value="10">10 Key</option>
+  <option value="20" selected>20 Key</option>
+  <option value="30">30 Key</option>
+  <option value="50">50 Key</option>
+</select>
+</div>
+
+</div>
+
+<div style="margin-top:10px">
+
+<label>HASIL 2 PERIODE LALU — OPSIONAL (aktifkan pola 2 langkah)</label>
+<input
+  id="prevLast"
+  value=""
+  maxlength="4"
+  inputmode="numeric"
+  placeholder="mis. 0932 — kosongkan jika tidak dipakai">
+
+</div>
+
+<div class="grid">
+
+<div>
+<label>BOBOT TRANSISI</label>
+<select id="transitionWeight">
+  <option value="1.5">Rendah</option>
+  <option value="2.5" selected>Sedang</option>
+  <option value="4">Tinggi</option>
+</select>
+</div>
+
+<div>
+<label>RANDOMISASI</label>
+<select id="randomness">
+  <option value=".05">Kecil</option>
+  <option value=".15" selected>Sedang</option>
+  <option value=".30">Tinggi</option>
+</select>
+</div>
+
+</div>
+
+<button onclick="generate()">
+⚡ GENERATE KEY
+</button>
+
+<button class="copy" onclick="copyAll()">
+📋 COPY SEMUA HASIL
+</button>
+
+<button class="pdf" onclick="downloadPDF()">
+📄 DOWNLOAD PDF
+</button>
+
+<button class="secondary" onclick="clearAll()">
+BERSIHKAN
+</button>
+
+</div>
+
+
+<!-- ANGKA IKUT -->
+
+<div class="card">
+
+<h2>🔥 ANGKA YANG KEMUNGKINAN IKUT 4D</h2>
+
+<div id="digitModel"></div>
+
+</div>
+
+
+<!-- 4D -->
+
+<div class="card">
+
+<div class="card-head">
+
+<h2>🎯 RANKING 4D</h2>
+
+<button class="mini" onclick="copyFourD()">COPY</button>
+
+</div>
+
+<div id="fourD">
+<div class="small">
+Tekan GENERATE KEY.
+</div>
+</div>
+
+</div>
+
+
+<!-- 3D -->
+
+<div class="card">
+
+<h2>🔢 HASIL 3D</h2>
+
+<div class="section">
+
+<div class="card-head">
+<h3>3D DEPAN — ABC</h3>
+<button class="mini" onclick="copyChips('threeFront')">COPY</button>
+</div>
+
+<div id="threeFront" class="chips"></div>
+
+</div>
+
+<div class="section">
+
+<div class="card-head">
+<h3>3D TENGAH — BCD</h3>
+<button class="mini" onclick="copyChips('threeMiddle')">COPY</button>
+</div>
+
+<div id="threeMiddle" class="chips"></div>
+
+</div>
+
+<div class="section">
+
+<div class="card-head">
+<h3>3D SILANG — ACD</h3>
+<button class="mini" onclick="copyChips('threeCross')">COPY</button>
+</div>
+
+<div id="threeCross" class="chips"></div>
+
+</div>
+
+</div>
+
+
+<!-- 2D -->
+
+<div class="card">
+
+<h2>🔢 HASIL 2D</h2>
+
+<div class="section">
+
+<div class="card-head">
+<h3>2D DEPAN — AB</h3>
+<button class="mini" onclick="copyChips('twoFront')">COPY</button>
+</div>
+
+<div id="twoFront" class="chips"></div>
+
+</div>
+
+<div class="section">
+
+<div class="card-head">
+<h3>2D TENGAH — BC</h3>
+<button class="mini" onclick="copyChips('twoMiddle')">COPY</button>
+</div>
+
+<div id="twoMiddle" class="chips"></div>
+
+</div>
+
+<div class="section">
+
+<div class="card-head">
+<h3>2D BELAKANG — CD</h3>
+<button class="mini" onclick="copyChips('twoBack')">COPY</button>
+</div>
+
+<div id="twoBack" class="chips"></div>
+
+</div>
+
+<div class="section">
+
+<div class="card-head">
+<h3>2D SILANG — AC · AD · BD</h3>
+<button class="mini" onclick="copyChips('twoCross')">COPY</button>
+</div>
+
+<div id="twoCross" class="chips"></div>
+
+</div>
+
+</div>
+
+
+<!-- DETAIL -->
+
+<div class="card">
+
+<h2>📊 DETAIL MODEL</h2>
+
+<div id="detail"></div>
+
+</div>
+
+
+<div class="card">
+
+<div class="notice">
+
+<b>Catatan:</b><br>
+Generator ini menggunakan bobot statistik dari pola transisi
+yang kita analisis pada data sebelumnya. "Angka ikut" berarti digit
+yang memperoleh skor model lebih tinggi untuk posisi tertentu.
+Isi "Hasil 2 periode lalu" untuk mengaktifkan pola transisi 2 langkah.
+Fitur unduh PDF memuat pustaka jsPDF dari internet saat pertama kali
+dipakai; jika offline, tombol PDF otomatis membuka dialog cetak
+(pilih "Save as PDF").
+Ini bukan probabilitas matematis pasti dan tidak menjamin hasil
+undian berikutnya.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- jsPDF untuk fitur download PDF -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+<script>
+
+/* ======================================================
+   MODEL DASAR
+====================================================== */
+
+const positionWeights = {
+
+AS:{
+0:1.00,
+6:.82,
+3:.80,
+2:.78,
+9:.74,
+7:.55,
+8:.52,
+4:.50,
+5:.46,
+1:.40
+},
+
+KOP:{
+9:1.00,
+4:.73,
+8:.68,
+5:.63,
+0:.61,
+3:.54,
+6:.52,
+1:.50,
+2:.46,
+7:.43
+},
+
+KEP:{
+0:1.00,
+9:.84,
+6:.82,
+8:.66,
+4:.63,
+7:.56,
+5:.54,
+3:.52,
+2:.48,
+1:.30
+},
+
+EKOR:{
+2:1.00,
+1:.98,
+0:.80,
+8:.72,
+5:.63,
+3:.60,
+7:.57,
+4:.54,
+9:.51,
+6:.50
+}
+
+};
+
+
+/* ======================================================
+   TRANSISI 1 LANGKAH
+====================================================== */
+
+const transition = {
+
+AS:{
+1:{0:5,6:4,3:4,2:4,9:3},
+2:{9:5,8:3,5:2,0:2,6:2},
+5:{9:5,0:3,6:3,2:2},
+6:{0:5,3:3,9:3,2:2},
+8:{7:4,9:3,0:2,6:2},
+9:{4:6,0:4,3:3,2:3}
+},
+
+KOP:{
+7:{9:11,4:5,8:4,5:3,0:3},
+6:{9:4,8:4,5:2,4:2},
+9:{8:8,9:4,4:4,0:3},
+8:{9:7,4:4,0:3,5:3},
+5:{9:5,4:4,8:3,0:2}
+},
+
+KEP:{
+5:{0:6,9:5,6:5,8:3,4:3},
+2:{6:3,7:2,8:2,4:2,0:2,9:2},
+9:{6:6,0:4,8:3,4:3},
+6:{0:5,9:4,4:3,8:3},
+4:{9:5,0:4,6:3}
+},
+
+EKOR:{
+6:{2:6,1:6,0:5,8:3},
+9:{8:8,2:4,1:3,0:3},
+8:{9:8,2:4,1:3,0:3},
+2:{6:5,3:4,1:3,0:3},
+1:{2:5,0:4,8:3}
+}
+
+};
+
+
+/* ======================================================
+   POLA 2 LANGKAH
+====================================================== */
+
+const twoStep = {
+
+AS:{
+"21":{8:2,5:2}
+},
+
+KOP:{
+"67":{9:2,8:2,5:1}
+},
+
+KEP:{
+"25":{6:1,7:1,8:1,4:1,0:1,9:1}
+},
+
+EKOR:{
+"96":{2:1}
+}
+
+};
+
+
+/* ======================================================
+   FUNGSI SKOR
+====================================================== */
+
+function digitScore(
+  pos,
+  digit,
+  previous,
+  prev2,
+  transitionWeight,
+  randomness
+){
+
+  let score =
+    positionWeights[pos][digit] || .20;
+
+  const tr =
+    transition[pos]?.[previous];
+
+  if(tr && tr[digit] !== undefined){
+
+    const max =
+      Math.max(...Object.values(tr));
+
+    score +=
+      transitionWeight *
+      (tr[digit] / max);
+
+  }
+
+  if(
+    prev2 !== null &&
+    prev2 !== undefined &&
+    prev2 !== ""
+  ){
+
+    const ts =
+      twoStep[pos]?.[
+        String(prev2) + String(previous)
+      ];
+
+    if(ts && ts[digit] !== undefined){
+
+      const max2 =
+        Math.max(...Object.values(ts));
+
+      score +=
+        transitionWeight * .5 *
+        (ts[digit] / max2);
+
+    }
+
+  }
+
+  score *=
+    1 + ((Math.random()-.5)*randomness);
+
+  return Math.max(score,.01);
+}
+
+
+/* ======================================================
+   WEIGHTED RANDOM
+====================================================== */
+
+function weightedChoice(scores){
+
+  let total=0;
+
+  for(const d in scores){
+    total += Math.max(scores[d],0);
+  }
+
+  let r =
+    Math.random()*total;
+
+  for(const d in scores){
+
+    r -= Math.max(scores[d],0);
+
+    if(r<=0)
+      return Number(d);
+
+  }
+
+  return 0;
+}
+
+
+/* ======================================================
+   SKOR 4D — DETERMINISTIK
+====================================================== */
+
+function scoreKey(
+  key,
+  last,
+  prevLast,
+  transitionWeight
+){
+
+  const pos=[
+    "AS",
+    "KOP",
+    "KEP",
+    "EKOR"
+  ];
+
+  const prev2 =
+    prevLast
+    ? prevLast.split("").map(Number)
+    : null;
+
+  let score=0;
+
+  for(let i=0;i<4;i++){
+
+    score += digitScore(
+      pos[i],
+      Number(key[i]),
+      Number(last[i]),
+      prev2 ? prev2[i] : null,
+      transitionWeight,
+      0
+    );
+
+  }
+
+  if(key.includes("9"))
+    score += .08;
+
+  if(key.includes("0"))
+    score += .07;
+
+  if(
+    key[0]===key[1] ||
+    key[1]===key[2] ||
+    key[2]===key[3]
+  )
+    score += .05;
+
+  return score;
+}
+
+
+/* ======================================================
+   HELPER BERSAMA
+====================================================== */
+
+function badgeFor(i){
+  if(i===0) return "TOP MODEL";
+  if(i<3) return "HIGH";
+  if(i<10) return "MEDIUM";
+  return "ALTERNATIVE";
+}
+
+
+function topEntries(object, limit){
+  return Object
+    .entries(object)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,limit);
+}
+
+
+function addScore(object, key, score){
+  object[key] =
+    (object[key] || 0) + score;
+}
+
+
+function getDigitModel(
+  last,
+  prevLast,
+  transitionWeight
+){
+
+  const positions=[
+    "AS","KOP","KEP","EKOR"
+  ];
+
+  const prev2 =
+    prevLast
+    ? prevLast.split("").map(Number)
+    : null;
+
+  return positions.map((pos,i)=>{
+
+    const previous=
+      Number(last[i]);
+
+    const arr=[];
+
+    for(let d=0;d<=9;d++){
+
+      arr.push({
+        digit:d,
+        score:digitScore(
+          pos,
+          d,
+          previous,
+          prev2 ? prev2[i] : null,
+          transitionWeight,
+          0
+        )
+      });
+
+    }
+
+    arr.sort((a,b)=>b.score-a.score);
+
+    return {
+      pos:pos,
+      previous:previous,
+      prevDigit:
+        prevLast ? prevLast[i] : null,
+      arr:arr
+    };
+
+  });
+
+}
+
+
+function aggregate3D(results){
+
+  const front={};
+  const middle={};
+  const cross={};
+
+  results.forEach(x=>{
+
+    const k=x.key;
+
+    addScore(front,k.slice(0,3),x.score);
+    addScore(middle,k.slice(1,4),x.score);
+    addScore(cross,k[0]+k[2]+k[3],x.score);
+
+  });
+
+  return {front,middle,cross};
+
+}
+
+
+function aggregate2D(results){
+
+  const front={};
+  const middle={};
+  const back={};
+  const cross={};
+
+  results.forEach(x=>{
+
+    const k=x.key;
+
+    addScore(front,k.slice(0,2),x.score);
+    addScore(middle,k.slice(1,3),x.score);
+    addScore(back,k.slice(2,4),x.score);
+
+    addScore(cross,k[0]+k[2],x.score);
+    addScore(cross,k[0]+k[3],x.score);
+    addScore(cross,k[1]+k[3],x.score);
+
+  });
+
+  return {front,middle,back,cross};
+
+}
+
+
+/* ======================================================
+   BACA INPUT
+====================================================== */
+
+function readLast(id, required){
+
+  const digits =
+    document
+    .getElementById(id)
+    .value
+    .replace(/\D/g,"")
+    .slice(-4);
+
+  if(!digits)
+    return required ? "0000" : "";
+
+  return digits.padStart(4,"0");
+}
+
+
+/* ======================================================
+   GENERATE
+====================================================== */
+
+let currentResults=[];
+let lastRun=null;
+
+function generate(){
+
+  const last =
+    readLast("last", true);
+
+  document
+    .getElementById("last")
+    .value = last;
+
+  const prevLast =
+    readLast("prevLast", false);
+
+  document
+    .getElementById("prevLast")
+    .value = prevLast;
+
+  const amount =
+    Number(
+      document
+      .getElementById("amount")
+      .value
+    );
+
+  const transitionWeight =
+    Number(
+      document
+      .getElementById("transitionWeight")
+      .value
+    );
+
+  const randomness =
+    Number(
+      document
+      .getElementById("randomness")
+      .value
+    );
+
+  lastRun={
+    last:last,
+    prevLast:prevLast,
+    twStr:
+      document
+      .getElementById("transitionWeight")
+      .value,
+    rndStr:
+      document
+      .getElementById("randomness")
+      .value,
+    tw:transitionWeight,
+    rnd:randomness
+  };
+
+  const positions=[
+    "AS",
+    "KOP",
+    "KEP",
+    "EKOR"
+  ];
+
+  const prev2 =
+    prevLast
+    ? prevLast.split("").map(Number)
+    : null;
+
+  const seen = new Set();
+  const candidates = [];
+  const target =
+    Math.max(200, amount*4);
+
+
+  /* SEED argmax per posisi */
+
+  let seed="";
+
+  for(let i=0;i<4;i++){
+
+    let best=0;
+    let bestS=-Infinity;
+
+    for(let d=0;d<=9;d++){
+
+      const s = digitScore(
+        positions[i],
+        d,
+        Number(last[i]),
+        prev2 ? prev2[i] : null,
+        transitionWeight,
+        0
+      );
+
+      if(s>bestS){
+        bestS=s;
+        best=d;
+      }
+
+    }
+
+    seed += best;
+
+  }
+
+  seen.add(seed);
+
+  candidates.push({
+    key:seed,
+    score:scoreKey(
+      seed, last, prevLast, transitionWeight
+    )
+  });
+
+
+  /* Sampling Monte Carlo */
+
+  for(
+    let n=0;
+    n<5000 && candidates.length<target;
+    n++
+  ){
+
+    let key="";
+
+    for(let i=0;i<4;i++){
+
+      let scores={};
+
+      for(let d=0;d<=9;d++){
+
+        scores[d]=digitScore(
+          positions[i],
+          d,
+          Number(last[i]),
+          prev2 ? prev2[i] : null,
+          transitionWeight,
+          randomness
+        );
+
+      }
+
+      key += weightedChoice(scores);
+
+    }
+
+    if(seen.has(key))
+      continue;
+
+    seen.add(key);
+
+    candidates.push({
+      key:key,
+      score:scoreKey(
+        key, last, prevLast, transitionWeight
+      )
+    });
+
+  }
+
+
+  currentResults =
+    candidates
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,amount);
+
+
+  render4D(currentResults);
+  render3D(currentResults);
+  render2D(currentResults);
+  renderDigits(last, prevLast, transitionWeight);
+  renderDetail(last, prevLast);
+
+  saveInputs(last, prevLast);
+
+}
+
+
+/* ======================================================
+   RENDER 4D
+====================================================== */
+
+function render4D(results){
+
+  const el =
+    document.getElementById("fourD");
+
+  if(!results.length){
+
+    el.innerHTML =
+      `<div class="small">Tekan GENERATE KEY.</div>`;
+
+    return;
+
+  }
+
+  const max=
+    results[0].score;
+
+  let html="";
+
+  results.forEach((x,i)=>{
+
+    const pct=
+      Math.max(
+        1,
+        (x.score/max)*100
+      ).toFixed(0);
+
+    html+=`
+
+    <div class="result">
+
+      <div class="rank">
+        #${i+1}
+      </div>
+
+      <div>
+
+        <div class="number">
+          ${x.key}
+        </div>
+
+        <span class="badge">
+          ${badgeFor(i)}
+        </span>
+
+        <div class="bar">
+          <i style="width:${pct}%"></i>
+        </div>
+
+      </div>
+
+      <div class="score">
+        ${x.score.toFixed(2)}
+      </div>
+
+    </div>
+
+    `;
+
+  });
+
+  el.innerHTML=html;
+
+}
+
+
+/* ======================================================
+   RENDER 3D & 2D
+====================================================== */
+
+function render3D(results){
+
+  const a =
+    aggregate3D(results);
+
+  renderChips("threeFront", a.front, 15);
+  renderChips("threeMiddle", a.middle, 15);
+  renderChips("threeCross", a.cross, 15);
+
+}
+
+
+function render2D(results){
+
+  const a =
+    aggregate2D(results);
+
+  renderChips("twoFront", a.front, 15);
+  renderChips("twoMiddle", a.middle, 15);
+  renderChips("twoBack", a.back, 15);
+  renderChips("twoCross", a.cross, 25);
+
+}
+
+
+/* ======================================================
+   CHIP RENDER
+====================================================== */
+
+function renderChips(
+  id,
+  object,
+  limit
+){
+
+  const arr=
+    topEntries(object, limit);
+
+  const el =
+    document.getElementById(id);
+
+  if(!arr.length){
+
+    el.innerHTML=
+      `<span class="small">-</span>`;
+
+    return;
+
+  }
+
+  const max=arr[0][1];
+
+  el.innerHTML=
+    arr.map(
+      (x,i)=>`
+
+      <span
+        class="chip ${i<3?'hot':''}">
+
+        ${x[0]}<span class="pct">${(
+          x[1]/max*100
+        ).toFixed(0)}</span>
+
+      </span>
+
+      `
+    ).join("");
+
+}
+
+
+/* ======================================================
+   ANGKA IKUT
+====================================================== */
+
+function renderDigits(
+  last,
+  prevLast,
+  transitionWeight
+){
+
+  const model =
+    getDigitModel(
+      last,
+      prevLast,
+      transitionWeight
+    );
+
+  let html="";
+
+  model.forEach(m=>{
+
+    const max=
+      m.arr[0].score;
+
+    html+=`
+
+    <div class="position">
+
+      <div class="pos-title">
+        ${m.pos}
+        <span class="small">
+          setelah ${m.previous}${
+            m.prevDigit!==null
+            ? " · sebelumnya "+m.prevDigit
+            : ""
+          }
+        </span>
+      </div>
+
+      <div class="chips">
+
+        ${m.arr.map(
+          (x,index)=>`
+
+          <span
+            class="chip
+            ${index<3?'hot':''}
+            ${index>6?'cold':''}">
+
+            ${x.digit}<span class="pct">${(
+              x.score/max*100
+            ).toFixed(0)}</span>
+
+          </span>
+
+          `
+        ).join("")}
+
+      </div>
+
+    </div>
+
+    `;
+
+  });
+
+  document.getElementById(
+    "digitModel"
+  ).innerHTML=html;
+
+}
+
+
+/* ======================================================
+   DETAIL
+====================================================== */
+
+function renderDetail(last, prevLast){
+
+  const labels=[
+    "AS",
+    "KOP",
+    "KEP",
+    "EKOR"
+  ];
+
+  let html="";
+
+  for(let i=0;i<4;i++){
+
+    const pos=labels[i];
+
+    const previous=
+      Number(last[i]);
+
+    const tr=
+      transition[pos]?.[previous];
+
+    const ts =
+      prevLast
+      ? twoStep[pos]?.[
+          prevLast[i] + previous
+        ]
+      : null;
+
+    const trText =
+      tr
+      ?
+      Object.entries(tr)
+      .sort((a,b)=>b[1]-a[1])
+      .map(x=>x[0]+" ("+x[1]+")")
+      .join(" • ")
+      :
+      "tidak ada data transisi khusus";
+
+    const tsText =
+      ts
+      ?
+      Object.entries(ts)
+      .sort((a,b)=>b[1]-a[1])
+      .map(x=>x[0]+" ("+x[1]+")")
+      .join(" • ")
+      :
+      "tidak ada";
+
+    html+=`
+
+      <div class="position">
+
+        <b>${pos}</b>
+
+        <div class="small">
+          Hasil terakhir:
+          <b>${previous}</b>${
+            prevLast
+            ? ` · 2 periode lalu: <b>${prevLast[i]}</b>`
+            : ""
+          }
+        </div>
+
+        <div class="small">
+          Transisi 1 langkah:
+          ${trText}
+        </div>
+
+        ${
+          prevLast
+          ? `<div class="small">
+               Pola 2 langkah: ${tsText}
+             </div>`
+          : ""
+        }
+
+      </div>
+
+    `;
+
+  }
+
+  document.getElementById(
+    "detail"
+  ).innerHTML=html;
+
+}
+
+
+/* ======================================================
+   DOWNLOAD PDF
+====================================================== */
+
+function downloadPDF(){
+
+  if(!currentResults.length){
+    alert("Generate key terlebih dahulu.");
+    return;
+  }
+
+  if(!lastRun){
+    alert("Data belum tersedia. Generate ulang.");
+    return;
+  }
+
+  const JS =
+    window.jspdf && window.jspdf.jsPDF;
+
+  if(!JS){
+
+    /* fallback offline: dialog cetak */
+
+    if(confirm(
+      "Modul PDF belum termuat (fitur ini butuh internet sekali untuk memuat pustaka).\n\nKlik OK untuk membuka dialog CETAK — pilih tujuan 'Save as PDF' untuk menyimpan hasil."
+    )){
+      window.print();
+    }
+
+    return;
+
+  }
+
+  const doc =
+    new JS({
+      unit:"mm",
+      format:"a4"
+    });
+
+  const PW=210;
+  const PH=297;
+  const M=15;
+  const CW=PW-M*2;
+
+  let y=M;
+
+  const ensure = h=>{
+    if(y+h > PH-14){
+      doc.addPage();
+      y=M;
+    }
+  };
+
+  const sectionTitle = t=>{
+
+    ensure(14);
+    y+=2;
+
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(11);
+    doc.setTextColor(20);
+    doc.text(t,M,y);
+
+    y+=1.5;
+    doc.setDrawColor(190);
+    doc.line(M,y,PW-M,y);
+    y+=5.5;
+
+  };
+
+  const TW_LABEL={
+    "1.5":"Rendah",
+    "2.5":"Sedang",
+    "4":"Tinggi"
+  };
+
+  const RND_LABEL={
+    ".05":"Kecil",
+    ".15":"Sedang",
+    ".30":"Tinggi"
+  };
+
+
+  /* ===== HEADER ===== */
+
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(16);
+  doc.text("4D KEY GENERATOR PRO",M,y);
+
+  y+=6;
+
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(9);
+  doc.setTextColor(120);
+  doc.text(
+    "Dicetak: "+
+    new Date().toLocaleString("id-ID"),
+    M,y
+  );
+
+  doc.setTextColor(20);
+
+  y+=7;
+  doc.setDrawColor(190);
+  doc.line(M,y,PW-M,y);
+  y+=6;
+
+
+  /* ===== PARAMETER ===== */
+
+  sectionTitle("PARAMETER");
+
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(9);
+
+  const p1 =
+    "Hasil terakhir: "+lastRun.last+
+    (lastRun.prevLast
+      ? "    ·    2 periode lalu: "+lastRun.prevLast
+      : "    ·    2 periode lalu: -");
+
+  const p2 =
+    "Bobot transisi: "+
+    (TW_LABEL[lastRun.twStr]||lastRun.twStr)+
+    " ("+lastRun.twStr+")"+
+    "    ·    Randomisasi: "+
+    (RND_LABEL[lastRun.rndStr]||lastRun.rndStr)+
+    " ("+lastRun.rndStr+")"+
+    "    ·    Jumlah key: "+
+    currentResults.length;
+
+  [p1,p2].forEach(t=>{
+    doc.text(t,M,y);
+    y+=5;
+  });
+
+  y+=2;
+
+
+  /* ===== ANGKA IKUT ===== */
+
+  sectionTitle("ANGKA IKUT — SKOR MODEL PER POSISI");
+
+  const model =
+    getDigitModel(
+      lastRun.last,
+      lastRun.prevLast,
+      lastRun.tw
+    );
+
+  model.forEach(m=>{
+
+    ensure(6);
+
+    const top5 =
+      m.arr.slice(0,5);
+
+    const maxS =
+      m.arr[0].score;
+
+    const line =
+      m.pos+" (setelah "+m.previous+"): "+
+      top5
+      .map(x=>
+        x.digit+" "+
+        (x.score/maxS*100).toFixed(0)+"%"
+      )
+      .join("  ·  ");
+
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(9);
+    doc.setTextColor(60);
+    doc.text(line,M,y);
+    doc.setTextColor(20);
+
+    y+=5;
+
+  });
+
+  y+=3;
+
+
+  /* ===== RANKING 4D ===== */
+
+  sectionTitle("RANKING 4D");
+
+  const colW=(CW-10)/2;
+  const rowH=6.5;
+
+  for(let i=0;i<currentResults.length;i+=2){
+
+    ensure(rowH);
+
+    for(let c=0;c<2;c++){
+
+      const idx=i+c;
+      if(idx>=currentResults.length) break;
+
+      const x=currentResults[idx];
+      const x0=M+c*(colW+10);
+
+      doc.setFont("courier","bold");
+      doc.setFontSize(11);
+      doc.setTextColor(20);
+      doc.text(x.key,x0,y);
+
+      doc.setFont("helvetica","normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(120);
+      doc.text(
+        "#"+(idx+1)+"  "+
+        x.score.toFixed(2)+"  "+
+        badgeFor(idx),
+        x0+17,y
+      );
+
+      doc.setTextColor(20);
+
+    }
+
+    y+=rowH;
+
+  }
+
+  y+=3;
+
+
+  /* ===== 3D ===== */
+
+  sectionTitle("HASIL 3D");
+
+  const agg3 =
+    aggregate3D(currentResults);
+
+  [
+    ["3D DEPAN (ABC)",agg3.front],
+    ["3D TENGAH (BCD)",agg3.middle],
+    ["3D SILANG (ACD)",agg3.cross]
+
+  ].forEach(g=>{
+
+    const items=
+      topEntries(g[1],15)
+      .map(e=>e[0]);
+
+    if(!items.length) return;
+
+    doc.setFont("courier","bold");
+    doc.setFontSize(10);
+    const lines=
+      doc.splitTextToSize(items.join("   "),CW);
+
+    ensure(8+lines.length*5);
+
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(9);
+    doc.setTextColor(90);
+    doc.text(g[0],M,y);
+
+    y+=4.5;
+
+    doc.setFont("courier","bold");
+    doc.setFontSize(10);
+    doc.setTextColor(20);
+    doc.text(lines,M,y);
+
+    y+=lines.length*5+3;
+
+  });
+
+  y+=2;
+
+
+  /* ===== 2D ===== */
+
+  sectionTitle("HASIL 2D");
+
+  const agg2 =
+    aggregate2D(currentResults);
+
+  [
+    ["2D DEPAN (AB)",agg2.front],
+    ["2D TENGAH (BC)",agg2.middle],
+    ["2D BELAKANG (CD)",agg2.back],
+    ["2D SILANG (AC · AD · BD)",agg2.cross]
+
+  ].forEach(g=>{
+
+    const limit =
+      g[0].indexOf("SILANG")>=0 ? 25 : 15;
+
+    const items=
+      topEntries(g[1],limit)
+      .map(e=>e[0]);
+
+    if(!items.length) return;
+
+    doc.setFont("courier","bold");
+    doc.setFontSize(10);
+    const lines=
+      doc.splitTextToSize(items.join("   "),CW);
+
+    ensure(8+lines.length*5);
+
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(9);
+    doc.setTextColor(90);
+    doc.text(g[0],M,y);
+
+    y+=4.5;
+
+    doc.setFont("courier","bold");
+    doc.setFontSize(10);
+    doc.setTextColor(20);
+    doc.text(lines,M,y);
+
+    y+=lines.length*5+3;
+
+  });
+
+
+  /* ===== CATATAN ===== */
+
+  const note=
+    "Catatan: Generator ini menggunakan bobot statistik dari pola transisi yang "+
+    "dianalisis pada data sebelumnya. 'Angka ikut' berarti digit yang memperoleh "+
+    "skor model lebih tinggi untuk posisi tertentu. Skor merupakan alat bantu "+
+    "eksplorasi pola, bukan probabilitas matematis pasti, dan tidak menjamin "+
+    "hasil undian berikutnya.";
+
+  doc.setFont("helvetica","italic");
+  doc.setFontSize(8);
+  doc.setTextColor(110);
+
+  const nLines=
+    doc.splitTextToSize(note,CW);
+
+  ensure(nLines.length*4+4);
+
+  doc.text(nLines,M,y);
+
+
+  /* ===== NOMOR HALAMAN ===== */
+
+  const total =
+    doc.getNumberOfPages();
+
+  for(let p=1;p<=total;p++){
+
+    doc.setPage(p);
+
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(8);
+    doc.setTextColor(150);
+
+    doc.text(
+      "4D Key Generator Pro",
+      M,PH-8
+    );
+
+    doc.text(
+      "Halaman "+p+"/"+total,
+      PW-M,PH-8,
+      {align:"right"}
+    );
+
+  }
+
+  doc.setTextColor(20);
+
+
+  /* ===== SIMPAN ===== */
+
+  const fname=
+    "4D-key-"+
+    lastRun.last+
+    "-"+
+    new Date().toISOString().slice(0,10)+
+    ".pdf";
+
+  doc.save(fname);
+
+}
+
+
+/* ======================================================
+   COPY
+====================================================== */
+
+function copyAll(){
+
+  if(!currentResults.length){
+    alert("Generate key terlebih dahulu.");
+    return;
+  }
+
+  const prevLast =
+    document.getElementById("prevLast").value;
+
+  let text=
+`4D KEY GENERATOR
+Hasil terakhir: ${
+  document.getElementById("last").value
+}${
+  prevLast
+  ? "\n2 periode lalu: " + prevLast
+  : ""
+}
+
+4D:
+`;
+
+  currentResults.forEach(
+    (x,i)=>{
+      text+=
+        `${i+1}. ${x.key} | ${x.score.toFixed(2)}\n`;
+    }
+  );
+
+
+  text+=`
+
+3D:
+`;
+
+  const three=[];
+
+  currentResults.forEach(x=>{
+
+    const k=x.key;
+
+    three.push(
+      k.slice(0,3),
+      k.slice(1,4),
+      k[0]+k[2]+k[3]
+    );
+
+  });
+
+  text+=
+    [...new Set(three)].join(" ");
+
+
+  text+=`
+
+2D:
+`;
+
+  const two=[];
+
+  currentResults.forEach(x=>{
+
+    const k=x.key;
+
+    two.push(
+      k.slice(0,2),
+      k.slice(1,3),
+      k.slice(2,4),
+      k[0]+k[2],
+      k[0]+k[3],
+      k[1]+k[3]
+    );
+
+  });
+
+  text+=
+    [...new Set(two)].join(" ");
+
+
+  navigator.clipboard
+    .writeText(text)
+    .then(()=>{
+      alert("Semua hasil berhasil disalin.");
+    })
+    .catch(()=>{
+      alert("Browser tidak mengizinkan clipboard.");
+    });
+
+}
+
+
+function copyFourD(){
+
+  if(!currentResults.length){
+    alert("Generate key terlebih dahulu.");
+    return;
+  }
+
+  const text =
+    currentResults
+    .map((x,i)=>
+      `${i+1}. ${x.key}  (${x.score.toFixed(2)})`
+    )
+    .join("\n");
+
+  navigator.clipboard
+    .writeText(text)
+    .then(()=>alert("Ranking 4D disalin."))
+    .catch(()=>alert("Browser tidak mengizinkan clipboard."));
+
+}
+
+
+function copyChips(id){
+
+  const chips =
+    document.querySelectorAll(`#${id} .chip`);
+
+  if(!chips.length){
+    alert("Belum ada data untuk disalin.");
+    return;
+  }
+
+  const text =
+    [...chips]
+    .map(c=>c.firstChild.textContent)
+    .join(" ");
+
+  navigator.clipboard
+    .writeText(text)
+    .then(()=>alert("Bagian ini disalin."))
+    .catch(()=>alert("Browser tidak mengizinkan clipboard."));
+
+}
+
+
+/* ======================================================
+   STORAGE
+====================================================== */
+
+const STORE = "keygen4d_v2";
+
+function saveInputs(last, prevLast){
+
+  try{
+
+    localStorage.setItem(STORE, JSON.stringify({
+
+      last: last,
+      prevLast: prevLast,
+      amount:
+        document.getElementById("amount").value,
+      transitionWeight:
+        document.getElementById("transitionWeight").value,
+      randomness:
+        document.getElementById("randomness").value
+
+    }));
+
+  }catch(e){}
+
+}
+
+
+function loadInputs(){
+
+  try{
+    return JSON.parse(
+      localStorage.getItem(STORE)
+    );
+  }catch(e){
+    return null;
+  }
+
+}
+
+
+/* ======================================================
+   CLEAR
+====================================================== */
+
+function clearAll(){
+
+  currentResults=[];
+  lastRun=null;
+
+  document.getElementById(
+    "fourD"
+  ).innerHTML=
+    `<div class="small">
+      Hasil dibersihkan.
+    </div>`;
+
+  document.getElementById(
+    "digitModel"
+  ).innerHTML="";
+
+  document.getElementById(
+    "detail"
+  ).innerHTML="";
+
+  [
+    "threeFront",
+    "threeMiddle",
+    "threeCross",
+    "twoFront",
+    "twoMiddle",
+    "twoBack",
+    "twoCross"
+  ].forEach(id=>{
+    document.getElementById(id)
+      .innerHTML="";
+  });
+
+}
+
+
+/* ======================================================
+   START
+====================================================== */
+
+(function init(){
+
+  const s = loadInputs();
+
+  if(s){
+
+    if(s.last)
+      document.getElementById("last").value = s.last;
+
+    if(s.prevLast)
+      document.getElementById("prevLast").value = s.prevLast;
+
+    if(s.amount)
+      document.getElementById("amount").value = s.amount;
+
+    if(s.transitionWeight)
+      document.getElementById("transitionWeight").value = s.transitionWeight;
+
+    if(s.randomness)
+      document.getElementById("randomness").value = s.randomness;
+
+  }
+
+  generate();
+
+})();
+
+</script>
+
+</body>
+  </html>
